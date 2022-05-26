@@ -11,6 +11,7 @@ final class IndexControllerTest extends TestCase
     public function setUp(): void
     {
         $this->http = new GuzzleHttp\Client(['base_uri' => getenv('APP_URL')]);
+
     }
 
     public function tearDown(): void
@@ -22,10 +23,17 @@ final class IndexControllerTest extends TestCase
     /** @test */
     public function RequestIndexPage_GetResponseStatus200(): void
     {
+        $response = $this->http->request('GET', '');
 
-        $response = $this->http->get('/');
         $this->assertEquals(200, $response->getStatusCode());
+    }
 
+    /** @test */
+    public function RequestNonExistedRoute_GetResponseStatus404(): void
+    {
+        $response = $this->http->get('/1a1/1aa');
+
+        $this->assertEquals(404, $response->getStatusCode());
     }
 
 }
