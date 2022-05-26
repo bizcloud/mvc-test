@@ -8,7 +8,7 @@ class IndexController extends AbstractController
 {
     public function IndexAction()
     {
-        $this->render();
+        $this->render('index');
 
     }
 

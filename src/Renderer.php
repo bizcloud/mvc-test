@@ -43,7 +43,7 @@ class Renderer
             [
                 __DIR__,
                 '..',
-                'template',
+                'templates',
             ]
         );
     }

@@ -6,7 +6,6 @@ use Bizcloud\MVCTest\ErrorHandler;
 
 
 define('ROOT_DIRECTORY', join(DIRECTORY_SEPARATOR, [__DIR__, '..', 'src']));
-define('NAMESPACE', 'Bizcloud\MVCTest');
 require join(DIRECTORY_SEPARATOR, [ROOT_DIRECTORY, '..', 'vendor', 'autoload.php']);
 
 error_reporting(E_ALL);
@@ -19,11 +18,8 @@ spl_autoload_register(function ($className) {
     $explode = array_reverse(explode('\\',$className));
     $className = $explode[0];
     $namespace = count($explode)>3 ? '/'.$explode [1].'/' : '/';
-    //$namespace = str_replace('\\', '/', __NAMESPACE__) ?: '/';
-
 
     $class = ROOT_DIRECTORY .$namespace. $className . '.php';
-    var_dump($class);
     if (file_exists($class)) {
         include_once($class);
     }

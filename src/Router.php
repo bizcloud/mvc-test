@@ -44,8 +44,8 @@ class Router
     {
 
         $route = $routes[1] ? strtolower($routes[1]) : self::INDEX_NAME;
-        return 'Controller\\' . ucfirst($route) . 'Controller';
-        return 'Controller\\' . ucfirst($route) . 'Controller';
+        //return 'Controller\\' . ucfirst($route) . 'Controller';
+        return 'Bizcloud\\MVCTest\\Controller\\' . ucfirst($route) . 'Controller';
     }
 
     private function getActionFromRoutes(array $routes): string
