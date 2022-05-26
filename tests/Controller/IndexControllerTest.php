@@ -28,12 +28,6 @@ final class IndexControllerTest extends TestCase
         $this->assertEquals(200, $response->getStatusCode());
     }
 
-    /** @test */
-    public function RequestNonExistedRoute_GetResponseStatus404(): void
-    {
-        $response = $this->http->get('/1a1/1aa');
 
-        $this->assertEquals(404, $response->getStatusCode());
-    }
 
 }

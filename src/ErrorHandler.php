@@ -48,7 +48,6 @@ class ErrorHandler
         }
 
 
-
         extract(['exception' => $exception]);
 
         $this->sendHeadersWithHttpCode($exception->getCode());
