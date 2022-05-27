@@ -6,9 +6,67 @@ use Bizcloud\MVCTest\Functions;
 class User
 {
     private int $id;
-    private string $name;
+    private string $login;
+    private string $firstname;
+    private string $surname;
     private string $password;
     private string $salt;
+    private int $age;
+
+    /**
+     * @return int
+     */
+    public function getAge(): int
+    {
+        return $this->age;
+    }
+
+    /**
+     * @param int $age
+     * @return User
+     */
+    public function setAge(int $age): User
+    {
+        $this->age = $age;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSurname(): string
+    {
+        return $this->surname;
+    }
+
+    /**
+     * @param string $surname
+     * @return User
+     */
+    public function setSurname(string $surname): User
+    {
+        $this->surname = $surname;
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogin(): string
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param string $login
+     * @return User
+     */
+    public function setLogin(string $login): User
+    {
+        $this->login = $login;
+        return $this;
+    }
+
 
     /**
      * @return int
@@ -29,17 +87,17 @@ class User
     /**
      * @return string
      */
-    public function getName(): string
+    public function getFirstname(): string
     {
-        return $this->name;
+        return $this->firstname;
     }
 
     /**
-     * @param string $name
+     * @param string $firstname
      */
-    public function setName(string $name): void
+    public function setFirstname(string $firstname): void
     {
-        $this->name = $name;
+        $this->firstname = $firstname;
     }
 
     /**
